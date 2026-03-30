@@ -52,6 +52,8 @@ on:
     secrets:
       PIPELINES_READ_TOKEN:
         required: false
+      PIPELINES_CUSTOMER_ORG_READ_TOKEN:
+        required: false
       INFRA_ROOT_WRITE_TOKEN:
         required: false
       ORG_REPO_ADMIN_TOKEN:
@@ -110,7 +112,7 @@ jobs:
         uses: ./pipelines-credentials
         with:
           PIPELINES_TOKEN_PATH: pipelines-read/${{ github.repository_owner }}
-          FALLBACK_TOKEN: ${{ secrets.PIPELINES_READ_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.PIPELINES_CUSTOMER_ORG_READ_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
       - name: Fetch Create PR Token
@@ -238,7 +240,7 @@ jobs:
         uses: ./pipelines-credentials
         with:
           PIPELINES_TOKEN_PATH: pipelines-read/${{ github.repository_owner }}
-          FALLBACK_TOKEN: ${{ secrets.PIPELINES_READ_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.PIPELINES_CUSTOMER_ORG_READ_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
       - name: Fetch Infra Root Write Token
@@ -439,7 +441,7 @@ jobs:
         uses: ./pipelines-credentials
         with:
           PIPELINES_TOKEN_PATH: pipelines-read/${{ github.repository_owner }}
-          FALLBACK_TOKEN: ${{ secrets.PIPELINES_READ_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.PIPELINES_CUSTOMER_ORG_READ_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
       - name: Fetch Create PR Token
@@ -555,7 +557,7 @@ jobs:
         uses: ./pipelines-credentials
         with:
           PIPELINES_TOKEN_PATH: pipelines-read/${{ github.repository_owner }}
-          FALLBACK_TOKEN: ${{ secrets.PIPELINES_READ_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.PIPELINES_CUSTOMER_ORG_READ_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
       - name: Fetch Org Repo Admin Token
@@ -667,7 +669,7 @@ jobs:
         uses: ./pipelines-credentials
         with:
           PIPELINES_TOKEN_PATH: pipelines-read/${{ github.repository_owner }}
-          FALLBACK_TOKEN: ${{ secrets.PIPELINES_READ_TOKEN }}
+          FALLBACK_TOKEN: ${{ secrets.PIPELINES_CUSTOMER_ORG_READ_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
       - name: Fetch Create PR Token
